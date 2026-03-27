@@ -1,0 +1,113 @@
+.text{
+  color: red;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  background: #0a0808;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: relative;
+}
+
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.logo:hover{
+  color: #00ff99;
+  cursor: pointer;
+}
+.logo::after{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #00ff99;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+.logo:hover::after{
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-block;   /* Important */
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #00ff99;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;   /* Ab sirf text ke width tak hi jayegi */
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+     border-top-left-radius: 89px;
+     
+   
+    background: #111;
+    width: 50%;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    display: none;
+    z-index: 10001;
+    transition: 0.3s
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+h2{
+  color: red;
+}
